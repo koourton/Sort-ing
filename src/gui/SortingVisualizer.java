@@ -4,8 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class SortingVisualizer extends JFrame {
-    private JPanel panel;
-    private int[] array;
+    private final JPanel panel;
+    private final int[] array;
 
     public SortingVisualizer(int[] array) {
         this.array = array;
