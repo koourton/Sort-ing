@@ -35,7 +35,7 @@ public class SortingVisualizer extends JFrame {
 
         for (int i = 0; i < array.length; i++) {
             int barHeight = (int)(((double)array[i] / getMaxValue()) * height);
-            g.setColor(Color.BLUE);
+            g.setColor(Color.BLACK);
             g.fillRect(i * barWidth, height - barHeight, barWidth, barHeight);
         }
     }
