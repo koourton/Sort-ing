@@ -4,8 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class SortingVisualizer extends JFrame {
-    private final JPanel panel;
-    private final int[] array;
+    private JPanel panel;
+    private int[] array;
 
     public SortingVisualizer(int[] array) {
         this.array = array;
@@ -14,11 +14,12 @@ public class SortingVisualizer extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
+        // Custom panel for drawing the array
         panel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                drawArray(g);
+                drawArray(g); // Draw the array as bars
             }
         };
 
@@ -26,6 +27,7 @@ public class SortingVisualizer extends JFrame {
         add(new ControlPanel(this), BorderLayout.SOUTH);
     }
 
+    // Draws the array as bars on the panel
     private void drawArray(Graphics g) {
         int width = panel.getWidth();
         int height = panel.getHeight();
@@ -33,11 +35,12 @@ public class SortingVisualizer extends JFrame {
 
         for (int i = 0; i < array.length; i++) {
             int barHeight = (int)(((double)array[i] / getMaxValue()) * height);
-            g.setColor(Color.BLACK);
+            g.setColor(Color.BLUE);
             g.fillRect(i * barWidth, height - barHeight, barWidth, barHeight);
         }
     }
 
+    // Finds the maximum value in the array for scaling bar heights
     private int getMaxValue() {
         int max = Integer.MIN_VALUE;
         for (int value : array) {

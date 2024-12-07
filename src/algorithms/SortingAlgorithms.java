@@ -1,17 +1,18 @@
 package algorithms;
-
 import javax.swing.*;
 
 public class SortingAlgorithms {
+
+    // Bubble Sort: Best Time Complexity - O(n), Average/Worst Time Complexity - O(n^2)
     public static void bubbleSort(int[] array, JPanel panel) {
         boolean swapped;
         for (int i = 0; i < array.length - 1; i++) {
             swapped = false;
-            for (int j = 0; j < array.length - 1 - i; j++) {
-                if (array[j] > array[j + 1]) {
+            for (int j = array.length - 1; j > i; j--) {
+                if (array[j] < array[j - 1]) {
                     int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
+                    array[j] = array[j - 1];
+                    array[j - 1] = temp;
                     swapped = true;
                     panel.repaint();
                     try {
@@ -25,6 +26,7 @@ public class SortingAlgorithms {
         }
     }
 
+    // Quick Sort: Best/Average Time Complexity - O(n log n), Worst Time Complexity - O(n^2)
     public static void quickSort(int[] array, int low, int high, JPanel panel) {
         if (low < high) {
             int pi = partition(array, low, high, panel);
@@ -64,6 +66,7 @@ public class SortingAlgorithms {
         array[j] = temp;
     }
 
+    // Merge Sort: Best/Average/Worst Time Complexity - O(n log n)
     public static void mergeSort(int[] array, int left, int right, JPanel panel) {
         if (left < right) {
             int middle = (left + right) / 2;
@@ -128,6 +131,7 @@ public class SortingAlgorithms {
         }
     }
 
+    // Insertion Sort: Best Time Complexity - O(n), Average/Worst Time Complexity - O(n^2)
     public static void insertionSort(int[] array, JPanel panel) {
         for (int i = 1; i < array.length; i++) {
             int key = array[i];
@@ -153,6 +157,7 @@ public class SortingAlgorithms {
         }
     }
 
+    // Selection Sort: Best/Average/Worst Time Complexity - O(n^2)
     public static void selectionSort(int[] array, JPanel panel) {
         for (int i = 0; i < array.length - 1; i++) {
             int minIndex = i;
