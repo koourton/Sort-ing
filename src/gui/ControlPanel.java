@@ -14,7 +14,7 @@ public class ControlPanel extends JPanel {
 
     public ControlPanel(SortingVisualizer visualizer) {
         this.visualizer = visualizer;
-        this.originalArray = visualizer.getArray().clone(); // Save the original array
+        this.originalArray = visualizer.getArray().clone();
 
         algorithmSelector = new JComboBox<>(new String[]{"Bubble Sort", "Quick Sort", "Merge Sort", "Insertion Sort", "Selection Sort"});
         sortButton = new JButton("Sort");
@@ -23,11 +23,11 @@ public class ControlPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (sortingThread != null && sortingThread.isAlive()) {
-                    sortingThread.interrupt(); // Interrupt the current sorting thread
+                    sortingThread.interrupt();
                 }
-                resetArray(); // Reset the array to its original state
+                resetArray();
                 String selectedAlgorithm = (String) algorithmSelector.getSelectedItem();
-                disableControls(); // Disable controls during sorting
+                disableControls();
                 sortingThread = new Thread(() -> {
                     try {
                         if ("Bubble Sort".equals(selectedAlgorithm)) {
@@ -42,7 +42,7 @@ public class ControlPanel extends JPanel {
                             SortingAlgorithms.selectionSort(visualizer.getArray(), visualizer.getPanel());
                         }
                     } finally {
-                        enableControls(); // Re-enable controls after sorting
+                        enableControls();
                     }
                 });
                 sortingThread.start();

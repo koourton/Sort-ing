@@ -15,7 +15,7 @@ public class SortingAlgorithms {
                     swapped = true;
                     panel.repaint();
                     try {
-                        Thread.sleep(2); // Animation delay
+                        Thread.sleep(2);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -42,7 +42,7 @@ public class SortingAlgorithms {
                 swap(array, i, j);
                 panel.repaint();
                 try {
-                    Thread.sleep(50); // Animation delay
+                    Thread.sleep(50);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -51,7 +51,7 @@ public class SortingAlgorithms {
         swap(array, i + 1, high);
         panel.repaint();
         try {
-            Thread.sleep(2); // Animation delay
+            Thread.sleep(2);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -97,7 +97,7 @@ public class SortingAlgorithms {
             k++;
             panel.repaint();
             try {
-                Thread.sleep(25); // Animation delay
+                Thread.sleep(25);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -109,7 +109,7 @@ public class SortingAlgorithms {
             k++;
             panel.repaint();
             try {
-                Thread.sleep(25); // Animation delay
+                Thread.sleep(25);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -121,7 +121,7 @@ public class SortingAlgorithms {
             k++;
             panel.repaint();
             try {
-                Thread.sleep(25); // Animation delay
+                Thread.sleep(25);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -136,17 +136,17 @@ public class SortingAlgorithms {
             while (j >= 0 && array[j] > key) {
                 array[j + 1] = array[j];
                 j = j - 1;
-                panel.repaint(); // Update the display
+                panel.repaint();
                 try {
-                    Thread.sleep(12); // Animation delay
+                    Thread.sleep(12);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
             array[j + 1] = key;
-            panel.repaint(); // Update the display
+            panel.repaint();
             try {
-                Thread.sleep(12); // Animation delay
+                Thread.sleep(12);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -165,9 +165,9 @@ public class SortingAlgorithms {
                 int temp = array[minIndex];
                 array[minIndex] = array[i];
                 array[i] = temp;
-                panel.repaint(); // Update the display
+                panel.repaint();
                 try {
-                    Thread.sleep(25); // Animation delay
+                    Thread.sleep(25);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
